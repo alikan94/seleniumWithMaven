@@ -1,28 +1,28 @@
-package day_05JUnit;
+package day06_radioButton_checkBox;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C04_BeforeAfter {
+public class C01_BeforeClass_AfterClass {
+/*
+BeforeClass ve AfterClass static olmalidir
+ */
+    static WebDriver driver;
 
-    WebDriver driver;
-
-    @Before
-    public void setup(){
+    @BeforeClass
+    public static void setup(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
     }
 
-    @After
-    public void teardown(){
+    @AfterClass
+    public static void teardown(){
         driver.close();
 
     }
