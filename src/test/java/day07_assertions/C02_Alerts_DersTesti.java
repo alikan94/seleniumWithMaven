@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C02_DersTesti {
+public class C02_Alerts_DersTesti {
     /*
     1) Bir class oluşturun: BestBuyAssertions
     2) https://www.bestbuy.com/ Adresine gidin farkli test method’lari olusturarak asagidaki testleri yapin
