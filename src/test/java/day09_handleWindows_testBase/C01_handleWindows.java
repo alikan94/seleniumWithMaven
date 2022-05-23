@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C01_HandleWindows {
+public class C01_handleWindows {
 
     WebDriver driver;
     @Before
@@ -47,6 +47,12 @@ public class C01_HandleWindows {
 
         WebElement ilkUrunResmiElementi = driver.findElement(By.xpath("(//div[@class='a-section aok-relative s-image-square-aspect'])[1]"));
         driver.switchTo().newWindow(WindowType.TAB);
+        /*
+Bu komutu kullandigimizda driver otomatik olarak olusturulan
+new Tab'a gecer
+yeni tab'da gorevi gerceklestirmek icin
+adimlari bastan almamiz gerekir
+ */
         driver.get("https://www.amazon.com/");
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Nutella" + Keys.ENTER);
         driver.findElement(By.xpath("(//div[@class='a-section aok-relative s-image-square-aspect'])[1]")).click();
