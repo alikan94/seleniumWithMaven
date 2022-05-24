@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C01_Asseritons {
+public class C01_Faker_Asseritons {
     /*
         amazon anasayfaya gidin
         uc farkli test methodu olusturarak asagidaki gorevleri yapin

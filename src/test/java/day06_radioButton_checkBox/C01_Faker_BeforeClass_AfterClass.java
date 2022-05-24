@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C01_BeforeClass_AfterClass {
+public class C01_Faker_BeforeClass_AfterClass {
 /*
 BeforeClass ve AfterClass static olmalidir
  */
