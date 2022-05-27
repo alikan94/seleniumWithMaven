@@ -51,27 +51,48 @@ public class C02_WebTables extends TestBase {
         List<WebElement> satirListesi = driver.findElements(By.xpath("//tbody//tr"));
         System.out.println("Satir sayisi : " + satirListesi.size());
         //              ○ Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
-        satirListesi.stream().map(WebElement::getText).forEach(System.out::println);
+        satirListesi.
+                stream().
+                map(WebElement::getText).
+                forEach(System.out::println);
         //              ○ 4.satirdaki(row) elementleri konsolda yazdırın.
-        satirListesi.stream().skip(3).limit(1).map(WebElement::getText).forEach(System.out::println);
+        satirListesi.
+                stream().
+                skip(3).
+                limit(1).
+                map(WebElement::getText).
+                forEach(System.out::println);
+        // tüm cell'leri yazdir
+        List<WebElement> cellList = driver.findElements(By.xpath("//tbody//td"));
+        cellList.
+                stream().
+                map(WebElement::getText).
+                forEach(System.out::println);
 
+        // email baslgindaki tüm elementleri yazdirin
 
-        /*
-        List<WebElement> satirlarListesi = driver.findElements(By.xpath("//tbody//tr"));
-        System.out.println("Satir sayisi : " + satirlarListesi.size());
-        for (WebElement each : satirlarListesi
-        ) {
-            System.out.println(each.getText());
+        List<WebElement> basliktakiElementlerListesi = driver.findElements(By.xpath("//thead//tr[1]//th"));
+        basliktakiElementlerListesi.
+                stream().
+                map(WebElement::getText).
+                forEach(System.out::println);
+
+        // email basliginin kacinci sutunda oldugunu bulalım
+        int emailSutunNo = 0;
+        for (int i = 0; i < basliktakiElementlerListesi.size(); i++) {
+            if (basliktakiElementlerListesi.get(i).getText().equals("Email")) {
+                emailSutunNo = i;
+                break;
+            }
         }
-        //          ○ 4.satirdaki(row) elementleri konsolda yazdırın.
-        List<WebElement> cellList = driver.findElements(By.xpath("//tbody//tr[4]//td"));
-        for (WebElement each : cellList
-        ) {
-            System.out.println(each.getText());
 
-        }
+        // email basligi altındaki tum elementleri (sütun) yazdirin
+        List<WebElement> emailSutunElementList = driver.findElements(By.xpath("//tbody//td[" + (emailSutunNo + 1) + "]"));
+        emailSutunElementList.
+                stream().
+                map(WebElement::getText).
+                forEach(System.out::println);
 
-         */
     }
 
     private void table() {
