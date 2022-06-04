@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C01_Faker_handleWindows {
+public class C01_HandleWindows {
 
     WebDriver driver;
     @Before
